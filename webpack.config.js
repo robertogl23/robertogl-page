@@ -22,7 +22,7 @@ module.exports = {
 	},
 	output: {
 		filename: "bundle.js",
-		path:"rortogl",
+		path:"/rortogl/",
 		
 		
 	},	
