@@ -1,0 +1,28 @@
+.header{
+    height: 64px;
+    background: $Orange;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    nav{
+        margin-right: 35px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    ul{
+        display: inline-flex;
+    }
+    li{
+        margin-right: 8px;
+    }
+    a{
+        color: #fff;
+    }
+    .title{
+        margin-left: 35px;
+        display: flex;
+        align-items: center;
+    }
+}
