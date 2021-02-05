@@ -22,7 +22,8 @@ module.exports = {
 	},
 	output: {
 		filename: "bundle.js",
-		publicPath: "/robertogl-page/",
+		path:path.join(__dirname,"dist"),
+		publicPath: "/dist",
 		
 		
 	},	
