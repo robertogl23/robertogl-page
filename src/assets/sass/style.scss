@@ -10,6 +10,7 @@ $VeryLightGray: hsl(0, 0%, 98%);
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	display: block;
 }
 body {
 	font-size: 15px;
@@ -26,5 +27,6 @@ ul{
 a{
 	text-decoration: none;
 }
+
 
 @import "header";
