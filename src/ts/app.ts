@@ -1,23 +1,18 @@
 import "../assets/sass/style.scss";
-
-/**
- * Document
- */
-const d = document;
-/** */
-/** */
-/** */
-/** */
-const $ = (id:string) =>{
-    let e  = d.getElementById(id);
-    
-    const setText = (text:string) => {
-        if (!e )return;
-        e.innerText = text.toString();
+const title = document?.getElementById("header-title");
+let cont = 0
+setInterval(() => {
+   
+    if(cont == 3) {
+        cont = 1
+        title?.classList.remove(`txt-color-3`)
+        title?.classList.add(`txt-color-${cont}`)
+        return
     };
-    return {
-        setText,
-        element:e
-    }
-}
+    cont +=1;
+    title?.classList.remove(`txt-color-${cont -1 }`)
+    title?.classList.add(`txt-color-${cont}`)
+    
 
+
+},3000)

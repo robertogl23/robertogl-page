@@ -20,9 +20,44 @@
     a{
         color: #fff;
     }
+    span{
+        font-size: 26px;
+        font-weight: 800;
+    }
     .title{
         margin-left: 35px;
         display: flex;
         align-items: center;
+        display: inline-block;
+        margin-top: 10px;
+        transform: skew(20deg);
+ 
+       
+        color: white;
+        animation: shake 2s infinite;
+        animation-direction: alternate;
+
     }
+    .txt-color-1{
+        color: rgb(33, 130, 187);
+
+    }
+    .txt-color-2{
+        color: rgb(61, 33, 187);
+
+
+    }
+    .txt-color-3{
+        color: rgb(187, 33, 154);
+
+    }
+    @keyframes shake {
+        0% {
+          transform: skewY(1.5deg);
+        }
+        6% {
+          transform: skewY(-1.5deg);
+        }
+      }
+      
 }
