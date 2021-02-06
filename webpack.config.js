@@ -22,8 +22,8 @@ module.exports = {
 	},
 	output: {
 		filename: "bundle.js",
-		path: path.join(__dirname,"dist"),
-		//publicPath: "/robertogl-page/",
+		//path: path.join(__dirname,"dist"),
+		publicPath: "/robertogl-page/",
 		
 	},	
 	plugins: [
