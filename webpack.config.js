@@ -17,7 +17,7 @@ module.exports = {
 				
 			},
 			{
-				test: /\.js$/,
+				test: /\.ts$/,
 				exclude: /node_modules/,
 				use: {
 				  loader: "babel-loader",
@@ -32,8 +32,8 @@ module.exports = {
 		extensions: [ '.tsx', '.ts', '.js' ],
 	},
 	output: {
-		filename: "bundle.js",
-		path: path.join(__dirname,"dist"),
+		//filename: "bundle.js",
+		path: path.resolve(__dirname,"dist"),
 		//publicPath: "/robertogl-page/",
 		
 	},	

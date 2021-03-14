@@ -1,6 +1,6 @@
 .header{
     height: 64px;
-    background: $Orange;
+    background: rgb(36, 36, 36);
     color: #fff;
     display: flex;
     flex-direction: row;
@@ -28,14 +28,9 @@
         margin-left: 35px;
         display: flex;
         align-items: center;
-        display: inline-block;
-        margin-top: 10px;
-        transform: skew(20deg);
- 
-       
+        height: 100%;
+    
         color: white;
-        animation: shake 2s infinite;
-        animation-direction: alternate;
 
     }
     .txt-color-1{
@@ -51,13 +46,5 @@
         color: rgb(187, 33, 154);
 
     }
-    @keyframes shake {
-        0% {
-          transform: skewY(1.5deg);
-        }
-        6% {
-          transform: skewY(-1.5deg);
-        }
-      }
       
 }
