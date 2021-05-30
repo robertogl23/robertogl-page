@@ -14,10 +14,14 @@ $VeryLightGray: hsl(0, 0%, 98%);
 body {
 	font-size: 15px;
 	font-family: "Poppins", sans-serif;
-	background: $VeryLightGray;
 	font-size: 15px;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
+	flex-direction: column;
+	transition-duration: 1s;
 }
 ul{
 	list-style: none;
@@ -28,7 +32,21 @@ a{
 	text-decoration: none;
 }
 
+.container {
+	// border: 1px solid red;
+	width: 80%;
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 @import "header";
 @import "main";
 @import "titles";
+@import "gridPokemon";
+@import "card";
+@import "footer";

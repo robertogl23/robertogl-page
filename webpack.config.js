@@ -14,18 +14,21 @@ module.exports = {
 				test: /\.tsx?$/,
 				use: 'ts-loader',
 				exclude: /node_modules/,
-				
 			},
 			{
-				test: /\.ts$/,
-				exclude: /node_modules/,
-				use: {
-				  loader: "babel-loader",
-				  options: {
-					presets: ['@babel/preset-typescript']
-				  }
-				}
+				test: /\.html$/i,
+				loader: 'html-loader',
 			},
+			// {
+			// 	test: /\.ts$/,
+			// 	exclude: /node_modules/,
+			// 	use: {
+			// 	  loader: "babel-loader",
+			// 	  options: {
+			// 		presets: ['@babel/preset-typescript']
+			// 	  }
+			// 	}
+			// },
 		],
 	},
 	resolve: {

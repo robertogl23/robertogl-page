@@ -1,0 +1,23 @@
+.card{
+    // border: 1px solid blue;
+    height: 8em;
+    background: white;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    .card-content{
+        // border: 1px solid green;
+        height: 100%;
+    }
+    .title{
+        // border: 1px solid green;
+        height: 25%;
+        text-align: center;
+    }
+    .image{
+        // border: 1px solid green;
+        height: 75%;
+    }
+    img{
+        height: 85%;
+        max-width: 100%
+    }
+}

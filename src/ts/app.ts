@@ -1,44 +1,86 @@
 import "../assets/sass/style.scss";
-
-interface User {
-    nombre: string;
-    lastaname: string;
-}
-interface State {
-    list:Array<User>
-}
-const $form: HTMLFormElement = document.querySelector('form')!
-let state:State;
-const getFormData = <T>(form:HTMLFormElement) : T => {
+import { Api } from "./models/fetch";
+import { IPokemon } from "./types";
 
 
-    const formData: FormData = new FormData(form);
-    let data : T
-    const state = {
-        data: data!
+
+class App 
+{
+    
+    private data:Array<IPokemon>       = [];
+    private date =  new Date();
+    private listaColores:Array<string> = [
+        'hsl(0, 78%, 62%)',
+        'hsl(180, 62%, 55%)',
+        'hsl(212, 86%, 64%)',
+        'rgb(252, 175, 74)',
+        '#6200EA',
+        '#304FFE',
+        '#2962FF',
+        '#AA00FF',
+        '#F50057',
+        '#FF1744',
+        '#00C853',
+        '#FFEB3B',
+        '#03A9F4',
+        '#006064',
+        '#00B0FF',
+        '#CDDC39',
+        '#64DD17',
+    ]
+
+    StartApp():void
+    {
+        this.EfectoColores();
+        const $footer = document.getElementById('footer')
+        $footer!.innerHTML = `<p>Copyright © ${this.date.getFullYear()} RobertoGL </p>`;
+        const api = new Api();
+        api.get('pokemon?limit=100&offset=0')
+        .then(res => {
+            this.data = res.data;
+            this.PintarGridPokemon()
+        })
     }
 
-    let i = 0
+    PintarGridPokemon()
+    {
+        const $grid = document.getElementById('gridPokemon')
+        this.data.map((e,i) => (
+            $grid!.innerHTML += ` <div class="box" id="${i }">
+            <div class="card"> 
+                <div class="card-content ">
+                    <div class="image center">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png" alt="">
+                    </div>
+                    <div class="title center">
+                        <p>${e.name}</p>
+                    </div>
+                </div>
+            </div>
+        </div>`
 
-    let values = Array.from(formData.values())
+        ))
 
-    for (let key of formData.keys()) {
-        state.data = { ...state.data, [key]: values[i] }
-        i++
     }
 
+    private EfectoColores()
+    {
+        const $body = document.getElementById('page');
+        $body!.style.background = this.listaColores[this.getRandomInt()]
+        setInterval(() => {
+            $body!.style.background = this.listaColores[this.getRandomInt()]
+        },3000)
+    }
 
-    return state.data
+    private getRandomInt():number {
+        const max = 0
+        const min = this.listaColores.length - 1
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+   
 }
-
-$form.addEventListener('submit' ,(e:Event) => {
-    e.preventDefault()
-    getFormData<User>($form)
-    console.log(getFormData<User>($form).nombre)
-    state.list.push(getFormData<User>($form))
-    //const data:Array<FormTest> = getFormData<FormTest>(form)
-    console.log(state)
-})
+const app = new App();
+app.StartApp()
 
 
 
